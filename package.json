@@ -1,0 +1,31 @@
+{
+  "name": "rohrpost-frontend-client",
+  "version": "0.0.0",
+  "description": "A js frontend client library for rohrpost",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test -R tap --recursive --check-leaks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Gamevy/rohrpost-frontend-client-node.git"
+  },
+  "keywords": [
+    "rohrpost",
+    "websocket",
+    "sockjs"
+  ],
+  "dependencies": {
+    "request": "2.27.0",
+    "ws":"0.4.31"
+  },
+  "devDependencies": {
+    "mocha":  "1.13.0",
+    "chai": "1.7.2"
+  },
+  "author": "Marek Ventur <http://marekventur.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gamevy/rohrpost-frontend-client-node/issues"
+  }
+}
