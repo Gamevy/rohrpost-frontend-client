@@ -224,7 +224,6 @@
      * use the build-in one, for the browser we need to use a custom
      * one.
      */
-    var EventEmitter;
     if (isNodejs) {
         EventEmitter = require('events').EventEmitter;
     } else {
@@ -278,7 +277,6 @@
         Rohrpost.prototype = new EventEmitter();
         Rohrpost.prototype.constructor = Rohrpost;
     }
-
 
     // Expose the class either via AMD, CommonJS or the global object
     if (isNodejs){
