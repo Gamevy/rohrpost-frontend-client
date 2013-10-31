@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Gamevy/rohrpost-frontend-client-node.git"
+    "url": "git://github.com/Gamevy/rohrpost-frontend-client.git"
   },
   "keywords": [
     "rohrpost",
@@ -26,6 +26,6 @@
   "author": "Marek Ventur <http://marekventur.de>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Gamevy/rohrpost-frontend-client-node/issues"
+    "url": "https://github.com/Gamevy/rohrpost-frontend-client/issues"
   }
 }

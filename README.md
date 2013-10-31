@@ -15,8 +15,7 @@ var Rohrpost = require('rohrpost-frontend-client');
 
 // This works for both environments
 var rohrpost = new Rohrpost({
-  'connectionUrl': 'http://yourdomain.com:12345/yourconnection', // This is needed 
-  'proxy': 'http://localhost:8888' // This only works in nodejs
+  'connectionUrl': 'http://yourdomain.com:12345/yourconnection', // This is needed
 });
 
 rohrpost.once('my.event', function(data) {
