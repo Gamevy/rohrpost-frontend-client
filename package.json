@@ -1,6 +1,6 @@
 {
   "name": "rohrpost-frontend-client",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A js frontend client library for rohrpost",
   "main": "index.js",
   "scripts": {
@@ -17,10 +17,10 @@
   ],
   "dependencies": {
     "request": "2.27.0",
-    "ws":"0.4.31"
+    "ws": "0.4.31"
   },
   "devDependencies": {
-    "mocha":  "1.13.0",
+    "mocha": "1.13.0",
     "chai": "1.7.2"
   },
   "author": "Marek Ventur <http://marekventur.de>",
