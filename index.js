@@ -149,10 +149,10 @@
             }
             if (e.code == 100) {
                 // The client is asked to reconnect.
-                connect(onReconnect);
+                connect();
             } else if (!e.wasClean) {
                 // Something bad happened
-                reconnectAfterError(onReconnect);
+                reconnectAfterError();
             } else {
                 // If we end up here we should analyse the error and write a
                 // custom handler for it.
