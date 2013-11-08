@@ -112,11 +112,13 @@
          */
         function reconnectAfterError() {
             if (backoffInterval < backoffIntervalStop) {
+                // try and avoid the thundering herd
+                var timeout = Math.random() * backoffInterval;
                 setTimeout(function() {
                     backoffInterval *= 2;
                     connect();
-                }, backoffInterval);
-                that.log.info('Connection lost. Attempting to reconnect in %dms', backoffInterval);
+                }, timeout);
+                that.log.info('Connection lost. Attempting to reconnect in %dms', timeout);
             } else {
                 that.log.warn('Couldn\'t reconnect. Giving up');
             }
