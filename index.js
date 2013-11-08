@@ -110,11 +110,11 @@
          * in case of an unsuccessful ajax request. Uses exponential backoff
          * to avoid flooding the server with reconnect requests
          */
-        function reconnectAfterError(onOpen) {
+        function reconnectAfterError() {
             if (backoffInterval < backoffIntervalStop) {
                 setTimeout(function() {
                     backoffInterval *= 2;
-                    connect(onOpen);
+                    connect();
                 }, backoffInterval);
                 that.log.info('Connection lost. Attempting to reconnect in %dms', backoffInterval);
             } else {
