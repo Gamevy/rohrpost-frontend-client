@@ -94,6 +94,7 @@
                     socketConnection.on('open', onOpen);
                     socketConnection.on('close', onClose);
                     socketConnection.on('message', onMessage);
+                    socketConnection.on('error', onError);
                     that.log.debug("Connect to websocket via " + wsUrl);
                 } else {
                     socketConnection = new SockJS(connectionUrl);
@@ -192,6 +193,12 @@
                 that.emit(payload.topic, payload.data);
             }
 
+        }
+
+        function onError(error) {
+            console.log("onError", error);
+            that.open = false;
+            reconnectAfterError();
         }
 
         /**
