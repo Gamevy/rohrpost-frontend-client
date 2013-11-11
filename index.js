@@ -119,7 +119,7 @@
                     backoffInterval *= 2;
                     connect();
                 }, timeout);
-                that.log.info('Connection lost. Attempting to reconnect in %dms', timeout);
+                that.log.info('Connection lost. Attempting to reconnect in %d ms', timeout);
             } else {
                 that.log.warn('Couldn\'t reconnect. Giving up');
             }
