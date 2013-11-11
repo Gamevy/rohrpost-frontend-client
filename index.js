@@ -9,7 +9,7 @@
         // Simple exponential backoff for reconnects
         var backoffIntervalInitial = 500;
         var backoffIntervalStop = 60000;
-        var backoffInterval = backoffIntervalInitial;
+        var backoffInterval = 0;
 
         var closing = false;
         that.open = false;
@@ -84,7 +84,7 @@
 
                 function onOpen() {
                     socketConnection.send(sessionId);
-                    backoffInterval = backoffIntervalInitial; // Reset backoff interval
+                    backoffInterval = 0; // Reset backoff interval
                 }
 
                 if (isNodejs) {
@@ -116,7 +116,11 @@
                 // try and avoid the thundering herd
                 var timeout = Math.random() * backoffInterval;
                 setTimeout(function() {
-                    backoffInterval *= 2;
+                    if (backoffInterval == 0) {
+                        backoffInterval = backoffIntervalInitial;
+                    } else {
+                        backoffInterval *= 2;
+                    }
                     connect();
                 }, timeout);
                 that.log.info('Connection lost. Attempting to reconnect in %d ms', timeout);
