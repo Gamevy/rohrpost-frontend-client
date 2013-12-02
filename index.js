@@ -197,7 +197,7 @@
                     that.log.debug('[Received message]', payload);
                     that.emit(payload.topic, payload.data);
                 } catch (err) {
-                    that.log.error("Invalid json", data);
+                    that.log.error(err, data);
                 }
             }
 
