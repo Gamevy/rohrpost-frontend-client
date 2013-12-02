@@ -204,7 +204,7 @@
         }
 
         function onError(error) {
-            console.log("onError", error);
+            that.log.error(error);
             that.open = false;
             reconnectAfterError();
         }
