@@ -226,8 +226,8 @@
             return function() {
                 var args = Array.prototype.slice.call(arguments);
                 args.unshift('[' + level + ']');
-                console.log.apply(console, args);
-            }
+                console.log(args);
+            };
         }
 
         /***************
