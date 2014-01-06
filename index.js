@@ -223,8 +223,10 @@
          * This function is used to fill the this.log object above
          */
         function createDefaultLogger(level) {
-            if (console[level]) return console[level];
-            return console.log;
+            return function () {
+                if (console[level]) return console[level];
+                return console.log;
+	    };
         }
 
         /***************
