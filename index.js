@@ -226,6 +226,11 @@
             return function() {
                 var args = Array.prototype.slice.call(arguments);
                 args.unshift('[' + level + ']');
+
+		if (console.log.apply) {
+			return console.log.apply(console, args);
+		}
+
                 console.log(args);
             };
         }
