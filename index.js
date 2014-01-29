@@ -54,7 +54,7 @@
             info: createDefaultLogger('info'),
             debug: createDefaultLogger('debug'),
             warn: createDefaultLogger('warn'),
-            error: console.error
+            error: function(error) { throw error; }
         }
 
         /*******************
